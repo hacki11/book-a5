@@ -1,0 +1,42 @@
+\documentclass{article}
+
+\pagestyle{empty}
+
+\usepackage[
+  paperwidth=344mm,
+  paperheight=245mm,
+  margin=0mm,
+  noheadfoot
+]{geometry}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{xcolor}
+
+\begin{document}
+\begin{tikzpicture}[remember picture,overlay]
+
+  % -------------------------------------------------
+  % Datenformat: 344 x 245 mm
+  % U4 und U1 + Spine leicht überziehen, aber links bei 0 starten.
+  % -------------------------------------------------
+
+  % Rückseite U4 (.jpg) – Start exakt bei x=0, unten minimal überziehen
+  % Breite 168mm -> reicht von x=0 bis 168mm (2mm Überlappung mit Spine)
+  \node[anchor=south west] at ($(current page.south west)+(-1mm,-1mm)$) {%
+    \includegraphics[width=169mm,height=247mm]{u4-image.jpg}%
+  };
+
+  % Rücken (Spine) (.jpg) – mittig, mit leichter Überlappung
+  \node[anchor=south west] at ($(current page.south west)+(168mm,-1mm)$) {%
+    \includegraphics[width=10mm,height=247mm]{spine-image.jpg}%
+  };
+
+  % Vorderseite U1 (.jpg) – rechts + unten leicht überziehen
+  \node[anchor=south west] at ($(current page.south west)+(178mm,-1mm)$) {%
+    \includegraphics[width=168mm,height=247mm]{u1-image.jpg}%
+  };
+
+\end{tikzpicture}
+\end{document}
