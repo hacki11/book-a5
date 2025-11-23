@@ -1,0 +1,25 @@
+% Seitenlayout: Datenformat + Endformat + Ränder
+\usepackage[
+  paperwidth=154mm,
+  paperheight=216mm,
+  layoutwidth=148mm,
+  layoutheight=210mm,
+  layouthoffset=3mm,  % 3 mm Beschnitt links
+  layoutvoffset=3mm,  % 3 mm Beschnitt oben
+%  top=5mm,            % Abstand Text vom oberen Rand des Endformats
+%  bottom=5mm,         % Abstand Text vom unteren Rand des Endformats
+  inner=20mm,         % Abstand Text zur Bindungsseite
+  outer=12mm,           % äußerer Rand: 5 mm zum Endformat
+  top=15mm,
+  bottom=15mm
+]{geometry}
+
+% Optional: Zeilenabstand usw.
+\usepackage{setspace}
+\setstretch{1.25}      % ca. 1.2 × Grundzeilenabstand für 11pt
+
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{0pt}
+
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Pagella}
